@@ -30,6 +30,8 @@ public class UserEntry {
 	//every user will have many journal 
 	@DBRef
 	private List<JournalEntry> journalEntries = new ArrayList<>();
+	
+	private List<String> Roles = new ArrayList<>();
 
 	public String getId() {
 		return id;
@@ -61,5 +63,13 @@ public class UserEntry {
 
 	public void setJournalEntries(List<JournalEntry> journalEntries) {
 		this.journalEntries = journalEntries;
+	}
+
+	public List<String> getRoles() {
+		return Roles;
+	}
+
+	public void setRoles(List<String> roles) {
+		Roles = roles;
 	}
 }

@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import Amruaz.journalApp.Entity.JournalEntry;
 import Amruaz.journalApp.Entity.UserEntry;
@@ -19,11 +20,18 @@ public class JournalEntryService {
 	@Autowired
 	private UserEntryService userEntryService;
 	
+	@Transactional
 	public void saveEntry(JournalEntry journalEntry, UserEntry userEntry)
 	{
-		JournalEntry saved = journalEntryRepo.save(journalEntry);
-		userEntry.getJournalEntries().add(saved);
-		userEntryService.saveEntry(userEntry);
+		try
+		{
+			JournalEntry saved = journalEntryRepo.save(journalEntry);
+			userEntry.getJournalEntries().add(saved);
+			userEntryService.saveEntry(userEntry);
+		}catch(Exception e) {
+			System.out.println("some error in commiting"+ e);	
+		}
+		
 	}
 
 	public List<JournalEntry> findAll() {

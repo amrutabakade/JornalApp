@@ -31,6 +31,7 @@ public class UserEntry {
 	@DBRef
 	private List<JournalEntry> journalEntries = new ArrayList<>();
 	
+	@NonNull
 	private List<String> Roles = new ArrayList<>();
 
 	public String getId() {

@@ -8,4 +8,6 @@ import Amruaz.journalApp.Entity.UserEntry;
 public interface UserEntryRepo extends MongoRepository<UserEntry, ObjectId> {
 
 	UserEntry findByUsername(String username);
+
+	void deleteByUsername(String username);
 }

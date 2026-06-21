@@ -31,12 +31,7 @@ public class UserController {
 		return userEntryService.findAll();
 	}
 	
-	@PostMapping
-	public boolean createEntry(@RequestBody UserEntry myEntry)
-	{
-		userEntryService.saveEntry(myEntry);
-		return true;	
-	}
+	
 	
 	@GetMapping("id/{id}")
 	public Optional<UserEntry> getUserEntryById(@PathVariable ObjectId id) {
@@ -54,9 +49,15 @@ public class UserController {
 		userEntryService.deleteById(id);
 	}
 	
-	@PutMapping("/{username}")
-	public ResponseEntity<?> updateUserEntryById(@PathVariable String username, @RequestBody UserEntry myEntry )
+	@DeleteMapping()
+	public void deleteUserEntryByUserName(@RequestBody UserEntry myEntry)
 	{
-		return userEntryService.updateEntry(username, myEntry);
+		userEntryService.deleteByUserName(myEntry);
+	}
+	
+	@PutMapping()
+	public ResponseEntity<?> updateUserEntryById( @RequestBody UserEntry myEntry )
+	{
+		return userEntryService.updateEntry(myEntry);
 	}
 }

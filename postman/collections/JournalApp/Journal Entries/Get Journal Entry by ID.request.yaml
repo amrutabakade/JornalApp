@@ -1,0 +1,15 @@
+$kind: http-request
+name: Get Journal Entry by ID
+method: GET
+url: '{{baseUrl}}/jrnl/{{entryId}}'
+description: 'Get a specific journal entry by its ID. The authenticated user must own the entry.'
+auth:
+  type: basic
+  credentials:
+    - key: username
+      value: '{{username}}'
+    - key: password
+      value: '{{password}}'
+pathVariables:
+  - key: entryId
+    value: your-entry-id-here

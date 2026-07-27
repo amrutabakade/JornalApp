@@ -1,0 +1,10 @@
+$kind: collection
+name: JournalApp
+description: 'API collection for the JournalApp Spring Boot application. Covers public registration, journal entry management, and user management endpoints.'
+variables:
+  - key: baseUrl
+    value: 'http://localhost:8080'
+  - key: username
+    value: testuser
+  - key: password
+    value: testpassword

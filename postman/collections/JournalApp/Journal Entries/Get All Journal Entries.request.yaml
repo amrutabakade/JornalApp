@@ -1,0 +1,12 @@
+$kind: http-request
+name: Get All Journal Entries
+method: GET
+url: '{{baseUrl}}/jrnl/{{username}}'
+description: 'Get all journal entries for a specific user by username.'
+auth:
+  type: basic
+  credentials:
+    - key: username
+      value: '{{username}}'
+    - key: password
+      value: '{{password}}'

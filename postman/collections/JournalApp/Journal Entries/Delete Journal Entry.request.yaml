@@ -1,0 +1,15 @@
+$kind: http-request
+name: Delete Journal Entry
+method: DELETE
+url: '{{baseUrl}}/jrnl/{{username}}/{{entryId}}'
+description: 'Delete a journal entry by ID for the specified user.'
+auth:
+  type: basic
+  credentials:
+    - key: username
+      value: '{{username}}'
+    - key: password
+      value: '{{password}}'
+pathVariables:
+  - key: entryId
+    value: your-entry-id-here

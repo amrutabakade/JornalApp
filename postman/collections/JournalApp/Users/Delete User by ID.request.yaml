@@ -1,0 +1,15 @@
+$kind: http-request
+name: Delete User by ID
+method: DELETE
+url: '{{baseUrl}}/user/{{userId}}'
+description: 'Delete a user by their MongoDB ObjectId.'
+auth:
+  type: basic
+  credentials:
+    - key: username
+      value: '{{username}}'
+    - key: password
+      value: '{{password}}'
+pathVariables:
+  - key: userId
+    value: your-user-id-here

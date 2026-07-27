@@ -1,0 +1,14 @@
+# Maven build output
+target/
+
+# Eclipse
+bin/
+.classpath
+.project
+.settings/
+
+# Spring Boot config
+application.properties
+
+# Logs
+*.log

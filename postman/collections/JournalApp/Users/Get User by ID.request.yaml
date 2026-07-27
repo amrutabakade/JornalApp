@@ -1,0 +1,15 @@
+$kind: http-request
+name: Get User by ID
+method: GET
+url: '{{baseUrl}}/user/id/{{userId}}'
+description: 'Retrieve a specific user by their MongoDB ObjectId.'
+auth:
+  type: basic
+  credentials:
+    - key: username
+      value: '{{username}}'
+    - key: password
+      value: '{{password}}'
+pathVariables:
+  - key: userId
+    value: your-user-id-here

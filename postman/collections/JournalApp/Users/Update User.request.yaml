@@ -1,0 +1,23 @@
+$kind: http-request
+name: Update User
+method: PUT
+url: '{{baseUrl}}/user'
+description: "Update an existing user's details."
+auth:
+  type: basic
+  credentials:
+    - key: username
+      value: '{{username}}'
+    - key: password
+      value: '{{password}}'
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "username": "testuser",
+      "password": "newpassword",
+      "roles": ["USER"]
+    }

@@ -1,0 +1,22 @@
+$kind: http-request
+name: Delete User by Username
+method: DELETE
+url: '{{baseUrl}}/user'
+description: 'Delete a user by providing their username in the request body.'
+auth:
+  type: basic
+  credentials:
+    - key: username
+      value: '{{username}}'
+    - key: password
+      value: '{{password}}'
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "username": "testuser",
+      "password": "testpassword"
+    }

@@ -1,0 +1,22 @@
+$kind: http-request
+name: Create Journal Entry
+method: POST
+url: '{{baseUrl}}/jrnl/{{username}}'
+description: 'Create a new journal entry for the specified user.'
+auth:
+  type: basic
+  credentials:
+    - key: username
+      value: '{{username}}'
+    - key: password
+      value: '{{password}}'
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "title": "My First Entry",
+      "content": "Today was a great day!"
+    }

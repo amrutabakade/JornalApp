@@ -1,0 +1,16 @@
+$kind: http-request
+name: Register User
+method: POST
+url: '{{baseUrl}}/public'
+description: 'Register a new user. This is a public endpoint — no authentication required.'
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "username": "testuser",
+      "password": "testpassword",
+      "roles": ["USER"]
+    }
